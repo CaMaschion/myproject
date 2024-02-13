@@ -1,5 +1,6 @@
 package com.camila.myproject.loginscreen
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,13 +14,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.camila.myproject.ui.theme.Pink80
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import com.camila.myproject.R
+import com.camila.myproject.ui.theme.Green80
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -32,7 +36,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
     }
 
     Surface(
-        color = Pink80
+        color = Green80
 
     ) {
         Column(
@@ -42,6 +46,18 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Image(
+                painter = painterResource(id = R.drawable.logo_money),
+                contentDescription = "Logo Image",
+                modifier = Modifier
+                    .size(250.dp) // Adjust the size of the image as needed
+                    .padding(bottom = 16.dp)
+
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
 
             // Text Field to display username
             TextField(
@@ -53,8 +69,9 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                 singleLine = true,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 16.dp)
             )
+
+            Spacer(modifier = Modifier.height(5.dp))
 
             // Text Field to display entered password
             TextField(
@@ -66,6 +83,19 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
             )
+
+            Spacer(modifier = Modifier.height(5.dp))
+
+            TextButton(
+                onClick = { /*TODO*/ },
+                modifier = Modifier
+                    .wrapContentWidth()
+                    .align(Alignment.Start)
+
+            ) {
+                Text("Esqueci minha senha")
+
+            }
 
         }
 
@@ -84,13 +114,13 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                 modifier = Modifier
                     .padding(bottom = 16.dp)
                     .fillMaxWidth()
-                    .height(60.dp)
+                    .height(60.dp),
 
-            ) {
+                ) {
                 Text(text = "Acesse a sua conta")
-
             }
         }
+
     }
 
 }
