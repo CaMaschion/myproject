@@ -130,6 +130,97 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                 Text("Esqueci minha senha")
 
             }
+
+            Spacer(modifier = Modifier.height(50.dp))
+
+            Row {
+
+                Button(
+                    onClick = { /*TODO*/ },
+                    colors = ButtonDefaults.buttonColors(containerColor = Black),
+                    modifier = Modifier
+                        .padding(bottom = 16.dp)
+                        .height(40.dp),
+
+                    ) {
+                    Text(text = "1 ou 2")
+
+                }
+
+                Spacer(modifier = Modifier.padding(5.dp))
+
+                Button(
+                    onClick = { /*TODO*/ },
+                    colors = ButtonDefaults.buttonColors(containerColor = Black),
+                    modifier = Modifier
+                        .padding(bottom = 16.dp)
+                        .height(40.dp),
+
+                    ) {
+                    Text(text = "1 ou 2")
+
+                }
+
+                Spacer(modifier = Modifier.padding(5.dp))
+
+                Button(
+                    onClick = { /*TODO*/ },
+                    colors = ButtonDefaults.buttonColors(containerColor = Black),
+                    modifier = Modifier
+                        .padding(bottom = 16.dp)
+                        .height(40.dp),
+
+                    ) {
+                    Text(text = "1 ou 2")
+
+                }
+
+            }
+
+            Row {
+
+                Button(
+                    onClick = { /*TODO*/ },
+                    colors = ButtonDefaults.buttonColors(containerColor = Black),
+                    modifier = Modifier
+                        .padding(bottom = 16.dp)
+                        .height(40.dp),
+
+                    ) {
+                    Text(text = "1 ou 2")
+
+                }
+
+                Spacer(modifier = Modifier.padding(5.dp))
+
+                Button(
+                    onClick = { /*TODO*/ },
+                    colors = ButtonDefaults.buttonColors(containerColor = Black),
+                    modifier = Modifier
+                        .padding(bottom = 16.dp)
+                        .height(40.dp),
+
+                    ) {
+                    Text(text = "1 ou 2")
+
+                }
+
+                Spacer(modifier = Modifier.padding(5.dp))
+
+                Button(
+                    onClick = { /*TODO*/ },
+                    colors = ButtonDefaults.buttonColors(containerColor = Black),
+                    modifier = Modifier
+                        .padding(bottom = 16.dp)
+                        .height(40.dp),
+
+                    ) {
+                    Text(text = "1 ou 2")
+
+                }
+
+            }
+
         }
 
         Column(
@@ -139,6 +230,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+
             Spacer(modifier = Modifier.weight(1f))
 
             Button(
