@@ -25,11 +25,15 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.graphics.Color.Companion.White
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import com.camila.myproject.R
 import com.camila.myproject.ui.theme.Green80
+import com.camila.myproject.ui.theme.Pink40
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -44,7 +48,6 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
 
     Surface(
         color = Green80
-
     ) {
         Column(
             modifier = Modifier
@@ -72,12 +75,18 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                     username = newValue
                 },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-                label = { Text(text = "Nome") },
+                label = {
+                    Text(
+                        text = "Nome",
+                        color = Black
+                    )
+                },
                 singleLine = true,
                 isError = false,
                 colors = TextFieldDefaults.outlinedTextFieldColors(
-                    unfocusedBorderColor = Color.Black,
-                    focusedBorderColor = Color.DarkGray),
+                    unfocusedBorderColor = Black,
+                    focusedBorderColor = Color.DarkGray
+                ),
                 modifier = Modifier
                     .fillMaxWidth()
             )
@@ -89,12 +98,18 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                 onValueChange = { enteredPassword = it },
                 visualTransformation = PasswordVisualTransformation(),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-                label = { Text(text = "Senha") },
+                label = {
+                    Text(
+                        text = "Senha",
+                        color = Black
+                    )
+                },
                 singleLine = true,
                 isError = false,
                 colors = TextFieldDefaults.outlinedTextFieldColors(
-                    unfocusedBorderColor = Color.Black,
-                    focusedBorderColor = Color.DarkGray),
+                    unfocusedBorderColor = Black,
+                    focusedBorderColor = Color.DarkGray
+                ),
                 modifier = Modifier
                     .fillMaxWidth()
             )
@@ -104,7 +119,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
             TextButton(
                 onClick = { /*TODO*/ },
                 colors = ButtonDefaults.buttonColors(
-                    contentColor = Color.Black,
+                    contentColor = Black,
                     containerColor = Green80
                 ),
                 modifier = Modifier
@@ -115,7 +130,6 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                 Text("Esqueci minha senha")
 
             }
-
         }
 
         Column(
@@ -129,7 +143,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
 
             Button(
                 onClick = { /*TODO*/ },
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
+                colors = ButtonDefaults.buttonColors(containerColor = Black),
                 modifier = Modifier
                     .padding(bottom = 16.dp)
                     .fillMaxWidth()
@@ -139,7 +153,6 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                 Text(text = "Acessar")
             }
         }
-
     }
 
 }
