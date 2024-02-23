@@ -20,20 +20,16 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
-import androidx.compose.ui.graphics.Color.Companion.White
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import com.camila.myproject.R
 import com.camila.myproject.ui.theme.Green80
-import com.camila.myproject.ui.theme.Pink40
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -56,6 +52,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+
             Spacer(modifier = Modifier.height(16.dp))
 
             Image(
@@ -131,7 +128,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
 
             }
 
-            Spacer(modifier = Modifier.height(50.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             Row {
 
@@ -140,7 +137,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                     colors = ButtonDefaults.buttonColors(containerColor = Black),
                     modifier = Modifier
                         .padding(bottom = 16.dp)
-                        .height(40.dp),
+                        .height(50.dp)
 
                     ) {
                     Text(text = "1 ou 2")
@@ -154,7 +151,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                     colors = ButtonDefaults.buttonColors(containerColor = Black),
                     modifier = Modifier
                         .padding(bottom = 16.dp)
-                        .height(40.dp),
+                        .height(50.dp),
 
                     ) {
                     Text(text = "1 ou 2")
@@ -168,7 +165,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                     colors = ButtonDefaults.buttonColors(containerColor = Black),
                     modifier = Modifier
                         .padding(bottom = 16.dp)
-                        .height(40.dp),
+                        .height(50.dp),
 
                     ) {
                     Text(text = "1 ou 2")
@@ -184,7 +181,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                     colors = ButtonDefaults.buttonColors(containerColor = Black),
                     modifier = Modifier
                         .padding(bottom = 16.dp)
-                        .height(40.dp),
+                        .height(50.dp),
 
                     ) {
                     Text(text = "1 ou 2")
@@ -198,7 +195,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                     colors = ButtonDefaults.buttonColors(containerColor = Black),
                     modifier = Modifier
                         .padding(bottom = 16.dp)
-                        .height(40.dp),
+                        .height(50.dp),
 
                     ) {
                     Text(text = "1 ou 2")
@@ -212,7 +209,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                     colors = ButtonDefaults.buttonColors(containerColor = Black),
                     modifier = Modifier
                         .padding(bottom = 16.dp)
-                        .height(40.dp),
+                        .height(50.dp),
 
                     ) {
                     Text(text = "1 ou 2")
@@ -220,16 +217,6 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                 }
 
             }
-
-        }
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
 
             Spacer(modifier = Modifier.weight(1f))
 
@@ -244,7 +231,9 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
                 ) {
                 Text(text = "Acessar")
             }
+
         }
+
     }
 
 }
