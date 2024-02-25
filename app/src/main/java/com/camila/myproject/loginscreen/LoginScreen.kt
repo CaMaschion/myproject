@@ -1,5 +1,6 @@
 package com.camila.myproject.loginscreen
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,6 +26,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -34,13 +36,20 @@ import com.camila.myproject.ui.theme.Green80
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(onLoginClicked: (String) -> Unit) {
+
+    val contexto = LocalContext.current
+
+    var showSnackbar by remember {
+        mutableStateOf(false)
+    }
+
     var username by remember {
         mutableStateOf(TextFieldValue())
     }
+
     var enteredPassword by remember {
         mutableStateOf(TextFieldValue())
     }
-
 
     Surface(
         color = Green80
@@ -68,9 +77,7 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
 
             OutlinedTextField(
                 value = username,
-                onValueChange = { newValue ->
-                    username = newValue
-                },
+                onValueChange = { username = it },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
                 label = {
                     Text(
@@ -114,7 +121,10 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
             Spacer(modifier = Modifier.height(5.dp))
 
             TextButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    Toast.makeText(contexto, "ok", Toast.LENGTH_SHORT).show()
+                },
+
                 colors = ButtonDefaults.buttonColors(
                     contentColor = Black,
                     containerColor = Green80
@@ -125,98 +135,11 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
 
             ) {
                 Text("Esqueci minha senha")
-
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Row {
-
-                Button(
-                    onClick = { /*TODO*/ },
-                    colors = ButtonDefaults.buttonColors(containerColor = Black),
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                        .height(50.dp)
-
-                    ) {
-                    Text(text = "1 ou 2")
-
-                }
-
-                Spacer(modifier = Modifier.padding(5.dp))
-
-                Button(
-                    onClick = { /*TODO*/ },
-                    colors = ButtonDefaults.buttonColors(containerColor = Black),
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                        .height(50.dp),
-
-                    ) {
-                    Text(text = "1 ou 2")
-
-                }
-
-                Spacer(modifier = Modifier.padding(5.dp))
-
-                Button(
-                    onClick = { /*TODO*/ },
-                    colors = ButtonDefaults.buttonColors(containerColor = Black),
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                        .height(50.dp),
-
-                    ) {
-                    Text(text = "1 ou 2")
-
-                }
-
-            }
-
-            Row {
-
-                Button(
-                    onClick = { /*TODO*/ },
-                    colors = ButtonDefaults.buttonColors(containerColor = Black),
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                        .height(50.dp),
-
-                    ) {
-                    Text(text = "1 ou 2")
-
-                }
-
-                Spacer(modifier = Modifier.padding(5.dp))
-
-                Button(
-                    onClick = { /*TODO*/ },
-                    colors = ButtonDefaults.buttonColors(containerColor = Black),
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                        .height(50.dp),
-
-                    ) {
-                    Text(text = "1 ou 2")
-
-                }
-
-                Spacer(modifier = Modifier.padding(5.dp))
-
-                Button(
-                    onClick = { /*TODO*/ },
-                    colors = ButtonDefaults.buttonColors(containerColor = Black),
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                        .height(50.dp),
-
-                    ) {
-                    Text(text = "1 ou 2")
-
-                }
-
-            }
+            RandomKeyboard()
 
             Spacer(modifier = Modifier.weight(1f))
 
@@ -237,6 +160,68 @@ fun LoginScreen(onLoginClicked: (String) -> Unit) {
     }
 
 }
+
+@Composable
+private fun RandomKeyboard() {
+
+    Row {
+
+        for (i in 0..2) {
+            CreateRandomButton()
+
+            Spacer(modifier = Modifier.padding(5.dp))
+        }
+
+    }
+
+    Row {
+
+        for (i in 0..1) {
+            CreateRandomButton()
+
+            Spacer(modifier = Modifier.padding(5.dp))
+        }
+
+        ClearButton()
+
+    }
+}
+
+@Composable
+private fun ClearButton() {
+    Button(
+        onClick = { /*TODO*/ },
+        colors = ButtonDefaults.buttonColors(containerColor = Black),
+        modifier = Modifier
+            .padding(bottom = 16.dp)
+            .height(50.dp),
+
+        ) {
+        Text(text = "Limpar")
+
+    }
+}
+
+@Composable
+private fun CreateRandomButton() {
+    Button(
+        onClick = { /*TODO*/ },
+        colors = ButtonDefaults.buttonColors(containerColor = Black),
+        modifier = Modifier
+            .padding(bottom = 16.dp)
+            .height(50.dp)
+
+    ) {
+        Text(text = "1 ou 2")
+
+    }
+}
+
+@Composable
+private fun NumericRandomButton() {
+
+}
+
 
 @Preview
 @Composable
